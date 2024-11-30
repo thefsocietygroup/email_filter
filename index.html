@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Extractor Lite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+            border: 1px solid #000;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        textarea {
+            width: 90%;
+            height: 150px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            margin-right: 10px;
+        }
+        .output {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Extractor Lite 1.4</h1>
+        <form action="process_emails.php" method="POST">
+            <textarea name="inputText" placeholder="Paste text containing email addresses here..."></textarea>
+            <div class="options">
+                <label for="separator">Separator:</label>
+                <select name="separator" id="separator">
+                    <option value=",">Comma</option>
+                    <option value=";">Semicolon</option>
+                    <option value="\n">New Line</option>
+                </select>
+                <label>
+                    <input type="checkbox" name="sort" value="1"> Sort Alphabetically
+                </label>
+            </div>
+            <button type="submit">Extract</button>
+        </form>
+        <div class="output">
+            <h3>Extracted Emails:</h3>
+            <p>No emails extracted yet.</p>
+        </div>
+    </div>
+</body>
+</html>
